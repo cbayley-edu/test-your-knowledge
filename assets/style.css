@@ -1,0 +1,37 @@
+.austinPowersBody {
+    background-image: url("flowers.jpg");
+}
+
+.cocktailsBody {
+    background-image: url("martini-glass.jpg");
+}
+
+.centerButton {
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+
+}
+
+.highScoresDiv {
+    float: left;
+    width: 90%;
+    overflow-x: auto;
+    margin-left: 2%;
+}
+
+.timeLeftDiv {
+    float: right;
+    text-align: right;
+    width: 10%;
+    font-size: medium;
+    font-weight: bold;
+    margin-right: 2%;
+}
+
+.questions {
+    text-align: center;
+}
+

@@ -6,20 +6,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body id="mainBody">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1>Choose your quiz!</h1>
           <br>
-          <a href="cocktails.html" id="cocktailsBtn" class="btn btn-dark" role="button"><strong>Cocktails Quiz</strong></a>
-          <a href="austin-powers.html" id="austinPowersBtn" class="btn btn-dark" role="button"><strong>Austin Powers Quiz</strong></a>
+          <!--<a href="cocktails.html" id="cocktailsBtn" class="btn btn-dark" role="button"><strong>Cocktails Quiz</strong></a>-->
+          <button id="cocktailsBtn" type="button" class="btn btn-dark"><strong>Cocktails Quiz</strong></button>
+          <audio id="cocktailShakerAudio" src="assets/cocktail-shaker.mp3"></audio>
+          <!--<a href="austin-powers.html" id="austinPowersBtn" class="btn btn-dark" role="button"><strong>Austin Powers Quiz</strong></a>-->
+          <button id="austinPowersBtn" type="button" class="btn btn-dark"><strong>Austin Powers Quiz</strong></button>
+          <audio id="yeahBabyAudio" src="assets/yeah-baby.mp3"></audio>
           <br>
         </div>
-      </div>
-      <audio class="audio">
-          <source src="assets/cocktail-shaker.mp3" type="audio/mp3">
-      </audio>
-    
+    </div>
+    <div id="startQuizDiv"></div>
+          
     <script src="assets/script.js"></script>
 </body>
 </html>

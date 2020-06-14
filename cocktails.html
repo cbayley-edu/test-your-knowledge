@@ -7,8 +7,38 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+    <div class="container-fluid">
+        <br>
+        <div class="highScoresDiv">
+            <a href="high-scores.html"><strong>View High Scores</strong></a>
+            <div class="timeLeftDiv">
+            </div>
+        </div>
+        <br>
+        <hr>
+    </div>
+    <div class="container-fluid questions">
+        <h3 class="cocktailQuestionsDiv"></h3>
+        <br>
+        <div class="cocktailAnswersDiv">
+            <button class="btn btn-info" id="0"></button>
+            <br><br>
+            <button class="btn btn-info" id="1"></button>
+            <br><br>
+            <button class="btn btn-info" id="2"></button>
+            <br><br>
+            <button class="btn btn-info" id="3"></button>
+            <br><br>
+        </div>
     
-    
-    <script src="assets/script-cocktail.js"></script>
+        <div class="cocktailAnswersResultsDiv">
+            <br>
+            <audio id="cocktailCorrectAudio" src="assets/glass-clink.mp3"></audio>
+            <audio id="cocktailIncorrectAudio" src="assets/glass-break.mp3"></audio>
+        </div>
+    </div>
+
+
+    <script src="assets/script.js"></script>
 </body>
 </html>
