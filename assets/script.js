@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     q++;
 
                     setTimeout(function(){
-
                         cocktailAnswersResultsDivEl.innerText = "";
                     },
                     1000);
@@ -154,9 +153,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 });
             }
         } //end function
+
         if (q === 0) {
             displayCocktailQuestions(q);
         }
+        
     }
 
 
