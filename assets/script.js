@@ -39,26 +39,51 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //common code for cocktails.html and austin-powers.html
     var timeLeftEl = document.querySelector(".timeLeftDiv");
-    var deduct = 0;
-    function setTime(deduct) {
-        var timeLeft = 71;
 
+    function gameTimer() {
+        console.log("timer should start");
+        var timeLeft = 70;
         var timerInterval = setInterval(function() {
-            timeLeft--;
-            timeLeft = timeLeft - deduct;
             timeLeftEl.textContent = timeLeft;
-
-            if (timeLeft === 0) {
-                timeLeftEl.textContent = "Time's up!";
+            timeLeft--;
+            if (timeLeft < 0) {
                 clearInterval(timerInterval);
+                timeLeftEl.textContent = "Time's up!";
             }
+            // var buttonEls = document.querySelector("button");
+            // buttonEls.addEventListener("click", function() {
 
+            //     if (!cocktailQuestions.questions[q].correct[this.id]) {
+            //     timeLeft -= 5;
+            //     timeLeftEl.textContent = timeLeft;
+            //     console.log("lose 5 seconds" + timeLeft);
+            //     }
+            // });
         }, 1000);
-    };
-
-    if (timeLeftEl) {
-    setTime(deduct);
     }
+
+
+
+    // var deduct = 0;
+    // function setTime(deduct) {
+    //     var timeLeft = 71;
+
+    //     var timerInterval = setInterval(function() {
+    //         timeLeft = timeLeft - 1 - deduct;
+    //         deduct = 0;
+    //         timeLeftEl.textContent = timeLeft;
+
+    //         if (timeLeft === 0) {
+    //             timeLeftEl.textContent = "Time's up!";
+    //             clearInterval(timerInterval);
+    //         }
+
+    //     }, 1000);
+    // };
+
+    // if (timeLeftEl) {
+    //     setTime(deduct);
+    // }
 
 
     //code for cocktails.html
@@ -117,47 +142,66 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var q = 0;
     if (cocktailQuestionsDivEl) {
 
+
         function displayCocktailQuestions(q) {
 
-            cocktailQuestionsDivEl.innerText = cocktailQuestions.questions[q].question;
-            cocktailQuestionsDivEl.append(document.createElement("br"));
+        cocktailQuestionsDivEl.innerText = cocktailQuestions.questions[q].question;
+        cocktailQuestionsDivEl.append(document.createElement("br"));
 
-            for (var i = 0; i < 4; i++) {
-                var button = document.getElementById(i);
-                button.setAttribute("class", "btn btn-info");
-                button.setAttribute("id", i);
-                button.innerText = cocktailQuestions.questions[q].option[i];
-                cocktailAnswersDivEl.replaceChild(button, button);
-
-                var buttonEls = document.querySelectorAll("button");
-                buttonEls[button.id].addEventListener("click", function() {
-
-                    if (cocktailQuestions.questions[q].correct[this.id]) {
-                        //won't play on first question???
-                        //cocktailCorrectAudioEl.play();
-                        cocktailAnswersResultsDivEl.textContent = "Correct!";
-                        cocktailCorrectAudioEl.play();
-                    } else {
-                        cocktailIncorrectAudioEl.play();
-                        cocktailAnswersResultsDivEl.innerText = "Incorrect!";
-                    }
-
-                    q++;
-
-                    setTimeout(function(){
-                        cocktailAnswersResultsDivEl.innerText = "";
-                    },
-                    1000);
-
-                    displayCocktailQuestions(q);
-                });
+        for (var i = 0; i < 4; i++) {
+            var button = document.getElementById(i);
+            //button.removeAttribute("data-answer");
+            button.setAttribute("class", "btn btn-info");
+            button.setAttribute("id", i);
+            
+            var dataAnswerAttr = "incorrect"
+            console.log(i + cocktailQuestions.questions[q].correct[i]);
+            if (cocktailQuestions.questions[q].correct[i]) {
+                dataAnswerAttr = "correct";
             }
-        } //end function
+            button.setAttribute("data-answer", dataAnswerAttr);
+            console.log(button.getAttribute("data-answer"));
+
+            button.innerText = cocktailQuestions.questions[q].option[i];
+            cocktailAnswersDivEl.replaceChild(button, button);
+            
+
+            var buttonEls = document.querySelectorAll("button");
+            buttonEls[button.id].addEventListener("click", function() {
+                console.log(button.id + buttonEls[button.id].getAttribute("data-answer"));
+                if (cocktailQuestions.questions[q].correct[this.id]) {
+                    //won't play on first question???
+                    //cocktailCorrectAudioEl.play();
+                    cocktailAnswersResultsDivEl.textContent = "Correct!";
+                    //cocktailCorrectAudioEl.play();
+                } else {
+                    //cocktailIncorrectAudioEl.play();
+                    cocktailAnswersResultsDivEl.textContent = "Incorrect!";
+                }
+
+                q++;
+
+                setTimeout(function(){
+                    cocktailAnswersResultsDivEl.innerText = "";
+                },
+                1000);
+
+                if (q < 7) {
+                    displayCocktailQuestions(q);
+                }
+            });
+        }
+
+
+
+
+    } //end function
 
         if (q === 0) {
+            gameTimer();
             displayCocktailQuestions(q);
         }
-        
+
     }
 
 
