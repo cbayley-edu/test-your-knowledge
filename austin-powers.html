@@ -2,13 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Choose your Quiz!</title>
+    <title>Groovy Baby!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+    <div class="container-fluid">
+        <br>
+        <div class="highScoresDiv">
+            <a href="high-scores.html"><strong>View High Scores</strong></a>
+            <div class="timeLeftDiv">
+            </div>
+        </div>
+        <br>
+        <hr>
+    </div>
+    <div class="container-fluid questions">
+        <h3 class="austinPowersQuestionsDiv"></h3>
+        <br>
+        <div class="austinPowersAnswersDiv">
+            <button class="btn btn-info" id="0"></button>
+            <br><br>
+            <button class="btn btn-info" id="1"></button>
+            <br><br>
+            <button class="btn btn-info" id="2"></button>
+            <br><br>
+            <button class="btn btn-info" id="3"></button>
+            <br><br>
+        </div>
     
-    
+        <div class="austinPowersAnswersResultsDiv">
+            <br>
+            <audio id="austinPowersCorrectAudio" src="assets/smashing-baby.mp3"></audio>
+            <audio id="austinPowersIncorrectAudio" src="assets/how-about-no.mp3"></audio>
+        </div>
+    </div>
+
+
     <script src="assets/script.js"></script>
 </body>
 </html>

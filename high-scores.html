@@ -7,8 +7,48 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    
-    
-   <!-- <script src="assets/script.js"></script> -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1>Results:</h1>
+          <br>
+          <h3 id="results"></h3>
+          <br>
+          <h4 id="enterYourInitials">Enter your initials below to save your score.</h4>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <form id="enterInitials">
+            <label for="initials">Initials  </label>
+            <input type="text" id="initials" name="initials" maxlength="3">
+            <label for="currentScore">   </label>
+            <input type="text" id="currentScore" name="currentScore" readonly>
+            <label for="quizType">   </label>
+            <input type="text" id="quizType" name="quizType" readonly>
+            <input type="submit" value="Submit" id="submitButton">
+        </form>
+        <br>
+
+        <p>
+            <h5>
+                <a href="./index.html">Play a quiz to score some points!</a>
+            </h5>
+            <hr>
+        </p>
+        
+        <div id="highScoreDisplay">
+            <h3>High Scores</h3>
+            <hr>
+            <table id="scoresTable" class="table-striped table-responsive">
+                <tr id="scoresTableHeadings">
+                    <th class="scoresResults">Initials</th>
+                    <th class="scoresResults">Score</th>
+                    <th class="scoresResults">Quiz Type</th>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+   <script src="assets/script.js"></script>
 </body>
 </html>
