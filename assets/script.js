@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 getScore = JSON.parse(localStorage.getItem("score")).split(",");
                 getQuiz = JSON.parse(localStorage.getItem("quiz")).split(",");
                 
-                if (onSubmit) {
+                if (onSubmit && getInitials.length > 0) {
                     for (var j = 0; j < getInitials.length; j++) {
                         document.getElementById(j).remove();
                     }
