@@ -294,7 +294,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         function showResults(score, quiz) {
 
             if (score >= 60) {
-                console.log(score);
                 highScoresResultsDivEl.innerHTML = `Great Job!! 😀 Your final score is ${score}.`;
             } else 
             if (score < 60 && score >= 50) {
