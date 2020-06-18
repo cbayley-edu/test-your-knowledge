@@ -10,7 +10,7 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1>Results:</h1>
+          <h1 id="resultsHeading">Results:</h1>
           <br>
           <h3 id="results"></h3>
           <br>
@@ -38,7 +38,8 @@
         </p>
         
         <div id="highScoreDisplay">
-            <h3>High Scores</h3>
+            <h3 id="highScoresH3">High Scores</h3>
+            <button id="clearScoresBtn" type="button" class="btn btn-danger">Clear Scores</button>
             <hr>
             <table id="scoresTable" class="table-striped table-responsive">
                 <tr id="scoresTableHeadings">

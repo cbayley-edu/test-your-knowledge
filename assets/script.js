@@ -289,6 +289,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var highScoresResultsDivEl = document.querySelector("#results");
     var highScoreDivEl = document.querySelector("#currentScore");
     var quizTypeDivEl = document.querySelector("#quizType");
+    var clearScoreButtonEl = document.querySelector("#clearScoresBtn");
 
     if (highScoresResultsDivEl) {
         function showResults(score, quiz) {
@@ -319,6 +320,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         } else {
             document.querySelector("#enterYourInitials").remove();
             document.querySelector("#enterInitials").remove();
+            document.querySelector("#highScoresH3").remove();
+            document.querySelector("#resultsHeading").textContent = "High Scores";
         }
     }
 
@@ -409,5 +412,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } 
         }
         showHighScores(false);
+    }
+
+    if (clearScoreButtonEl) {
+        clearScoreButtonEl.addEventListener("click", function(){
+            var getInitials = localStorage.getItem("initials");
+            getInitialsArray = JSON.parse(getInitials).split(",");
+            var getScore = localStorage.getItem("score");
+            var getQuiz = localStorage.getItem("quiz");
+
+            if (getInitials) {
+                localStorage.removeItem("initials");
+            }
+            if (getScore) {
+                localStorage.removeItem("score");
+            }
+            if (getQuiz) {
+                localStorage.removeItem("quiz");
+            }
+            for (var i = 0; i < getInitialsArray.length; i++) {
+                console.log(i);
+                document.getElementById(i).remove();
+            }
+
+        });
+        
     }
 });
