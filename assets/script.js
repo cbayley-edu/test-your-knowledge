@@ -424,7 +424,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (clearScoreButtonEl) {
         clearScoreButtonEl.addEventListener("click", function(){
             var getInitials = localStorage.getItem("initials");
-            var getInitialsArray = [];
             var getScore = localStorage.getItem("score");
             var getQuiz = localStorage.getItem("quiz");
 
@@ -438,8 +437,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             if (getQuiz) {
                 localStorage.removeItem("quiz");
             }
+            var getInitialsArray = [];
             for (var i = 0; i < getInitialsArray.length; i++) {
-                console.log(i);
                 document.getElementById(i).remove();
             }
 
