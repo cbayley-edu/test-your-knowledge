@@ -259,13 +259,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     function checkAustinPowersAnswersClickEvent() {
 
+        correctArray = ["./assets/ap_nerd-alert.mp3", "./assets/ap_1-million-dollars.mp3", "./assets/ap_smashing-baby.mp3", "./assets/ap_yeah-baby.mp3"];
+        incorrectArray = ["./assets/ap_evil-laugh.mp3", "./assets/ap_how-about-no.mp3"];
+
         if (austinPowersQuestions.questions[u].correct[this.id]) {
             //won't play on first question???
-            austinPowersCorrectAudioEl.play();
+            var a = Math.floor((Math.random() * correctArray.length));
+            austinPowersCorrectAudioEl.setAttribute("src", correctArray[a]);
             austinPowersAnswersResultsDivEl.textContent = "Correct!";
+            austinPowersCorrectAudioEl.play();
         } else {
-            austinPowersIncorrectAudioEl.play();
+            var a = Math.floor((Math.random() * incorrectArray.length));
+            austinPowersIncorrectAudioEl.setAttribute("src", incorrectArray[a]);
             austinPowersAnswersResultsDivEl.textContent = "Incorrect!";
+            austinPowersIncorrectAudioEl.play();
             timeLeft = timeLeft - 4;
             timeLeftEl.textContent = timeLeft;
         }
