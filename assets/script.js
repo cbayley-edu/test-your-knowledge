@@ -424,11 +424,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (clearScoreButtonEl) {
         clearScoreButtonEl.addEventListener("click", function(){
             var getInitials = localStorage.getItem("initials");
-            getInitialsArray = JSON.parse(getInitials).split(",");
             var getScore = localStorage.getItem("score");
             var getQuiz = localStorage.getItem("quiz");
 
             if (getInitials) {
+                getInitialsArray = JSON.parse(getInitials).split(",");
                 localStorage.removeItem("initials");
             }
             if (getScore) {
