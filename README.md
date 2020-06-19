@@ -1,8 +1,10 @@
 # 04 Web APIs: Quiz
 
-Time to test your knowledge!  Choose between the drinks quiz or the Austin Powers quiz.
+Time to test your knowledge!  
 
-Start by choosing your quiz...
+Access the start page here: https://cbayley-edu.github.io/homework-week-04/high-scores.html
+
+Then choose your quiz...
 
 ![Choose Your Quiz](./assets/readMe_1_chooseYourQuiz.jpg)
 
