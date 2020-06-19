@@ -385,12 +385,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 getQuiz = JSON.parse(localStorage.getItem("quiz")).split(",");
                 
                 if (onSubmit && getInitials.length > 1) {
-                    for (var j = 0; j < getInitials.length; j++) {
+                    for (var j = 0; j < getInitials.length - 1; j++) {
                         document.getElementById(j).remove();
                     }
                 }
 
-                for (var i = getInitials.length; i > -1; i--) {
+                for (var i = getInitials.length-1; i > -1; i--) {
                     var writeRow = document.createElement("tr");
                     var writeInitials = document.createElement("td");
                     var writeScore = document.createElement("td");
