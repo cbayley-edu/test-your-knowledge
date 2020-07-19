@@ -26,7 +26,7 @@ Time to test your knowledge! Choose between a Cocktail quiz or an Austin Powers 
    ![Record and View Your Results](./assets/readMe_3_recordYourResults.jpg)
 
 #### Keep playing to beat your previous score and be sure to try both quizzes.
-##### There are different result messages based on your score - try to find them all!
+#### There are different result messages based on your score - try to find them all!
 
 ## License
 MIT License
